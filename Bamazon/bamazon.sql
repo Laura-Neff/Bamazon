@@ -14,7 +14,7 @@ CREATE TABLE products (
 );
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("Soylent", "Food",.50, 9999999999);
+VALUES ("Soylent", "Food",.50, 99999);
 
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
@@ -30,22 +30,26 @@ VALUES ("Richard Wagner's Best Hits -- Vinyl", "Electronics", 8.00, 10);
 
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("I Can't Believe it's Not Siri -- The Virtual Assistant that Spies on You", "Electronics", 999999999, 0);
+VALUES ("I Can't Believe it's Not Siri", "Electronics", 99999, 0);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("Virtual Reality Headset", "Electronics", 1000, 35);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("German in 9999999 Easy Steps", "Books", 1000000000, 0);
+VALUES ("German in 9999999 Easy Steps", "Books", 100000, 0);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("Monet Waterlily", "Art", 5000, 40);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("The Lamp that Never Got Delivered", "Electronics", 9999999, 0);
+VALUES ("The Lamp that Never Got Delivered", "Electronics", 99999, 0);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("Mario Kart", "Electronics", 35.60, 500);
+
+
+SELECT * FROM products;
+
 
 
 

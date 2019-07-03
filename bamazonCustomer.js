@@ -30,7 +30,23 @@ function afterConnection() {
             console.log("Stock Quantity: " + res[i].stock_quantity);
         }
 
+        inquirer
+        .prompt([
+        {
+        type: "input",
+        message: "Please give the ID of the product you would like to buy.",
+        name: "id"
+        },
+    // Here we create a basic password-protected text prompt.
+        {
+        type: "input",
+        message: "How many units of the product would you like to buy?",
+        name: "units"
+        }])
+
         
+
+
         connection.end();
     });
 }

@@ -1,16 +1,42 @@
 require("dotenv").config();
 
-var keys = require("./keys.js");
+var mysql = require("mysql");
 
-var MySQL = require("mysql");
+var inquirer = require("inquirer");
 
-var mysql = new MySQL(keys.myql);
+var connection = mysql.createConnection({
+    host: process.env.MySQL_Host,
+    user: process.env.MySQL_User,
+    port: process.env.MySQL_Port,
+    password: process.env.MySQL_Password,
+    database: process.env.MySQL_Database
+});
 
-var inquirer = require(inquirer);
+connection.connect(function(err) {
+    if (err) throw err;
+    console.log("connected as id " + connection.threadId);
+    afterConnection();
+});
 
-var connection = mysql.createConnection({mysql});
+function afterConnection() {
+    connection.query("SELECT * FROM products", function(err, res) {
+        if (err) throw err;
+        for(var i = 0; i < res.length; i++){
+            console.log("----------------------");
+            console.log("Product Id: " + res[i].item_id);
+            console.log("Product Name: " + res[i].product_name);
+            console.log("Department Name: " + res[i].department_name);
+            console.log("Price ($): " + res[i].price);
+            console.log("Stock Quantity: " + res[i].stock_quantity);
+        }
 
-console.log("Hi");
+        
+        connection.end();
+    });
+}
+
+
+
 
 
 

@@ -1,0 +1,23 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "\"echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laura-Neff/Bamazon.git"
+  },
+  "author": "",
+  "dependencies": {
+    "mysql": "^2.16.0",
+    "inquirer": "^6.2.1"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Laura-Neff/Bamazon/issues"
+  },
+  "homepage": "https://github.com/Laura-Neff/Bamazon#readme"
+}

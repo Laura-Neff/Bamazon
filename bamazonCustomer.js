@@ -44,10 +44,47 @@ function afterConnection() {
         name: "units"
         }])
 
+        .then(function(answer) {
+            var leftOverStock;
+            var unitsToBuy = parseInt(answer.units);
+            var totalCost;
+            var inStock;
+            var thePrice;
+            var theID;
+
+            for (var i = 0; i < res.length; i++) {
+              if (res[i].item_id === parseInt(answer.id)) {
+                inStock = res[i].stock_quantity;
+                thePrice = res[i].price;
+                // console.log(inStock);
+                // console.log(thePrice);
+                // console.log("------------");
+                // console.log(chosenItem);
+              }
+              if(inStock >= unitsToBuy){
+                  leftOverStock = inStock - unitsToBuy;
+                //   console.log(leftOverStock);
+                  totalCost = unitsToBuy*thePrice;
+            
+                  connection.query("UPDATE `bamazon_db`.`products` SET `stock_quantity`='" + 
+                                        leftOverStock + "' WHERE `item_id`='" + answer.id + "'");
+                 console.log("Thank you for buying with Bamazon! Your total payment amount is: $" + totalCost);
+                //   console.log(leftOverStock);
+                  connection.end();
+                  break;
+
+              } else if (inStock < unitsToBuy) {
+                  console.log("Insufficient quantity!");
+                  connection.end();
+                  break;
+              }
+            }});
+    
+
         
 
 
-        connection.end();
+        // connection.end();
     });
 }
 

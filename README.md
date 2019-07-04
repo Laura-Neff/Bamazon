@@ -11,3 +11,4 @@ will be calculated and printed to the terminal. If the item is not in stock, the
 <img src="TestCase1.png" width="350">
 <img src="TestCase1Result.png" width="350">
 <img src="TestCase2.png" width="350">
+<img src="Database.png" width="350">
